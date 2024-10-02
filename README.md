@@ -7,6 +7,19 @@
    * Check how the setup is done, you need to specify the args and return types of the C++ method using the `ctypes` lib.
    * In some cases, you'll need to convert Python types into ctypes before calling the C++ method.
 
+``` mermaid
+sequenceDiagram
+    participant Python
+    participant ctypes
+    participant Cpp
+
+    Python->>ctypes: [Load library, configure args and return types]
+    Python->>ctypes: Pass data
+    ctypes->>Cpp: Pass data
+    Cpp-->>Cpp: Compute result
+    Cpp->>Python: Result
+```
+
 Example output:
 
 `$ python3 main.py`
